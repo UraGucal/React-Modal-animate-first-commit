@@ -1,12 +1,67 @@
 .App {
   text-align: center;
 }
-
+.header-intro{
+  background: rgb(43, 42, 42);
+  padding: 10px;
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.711);
+  z-index: 1;
+}
+.Vmodal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 600px;
+  background: #fff;
+  margin: 0 auto;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.Vmodal-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img{
+  position: absolute;
+  right: 0;
+}
+h1{
+  color:rgba(0, 0, 0, 0.91);
+}
+h2{
+  box-shadow: -2px 1px 6px rgb(50, 50, 50);
+  border-radius: 10px;
+  color: rgb(255, 250, 250);
+}
+.show{
+  background-color: red;
+  transition: all 2s;
+}
+.container{
+  height: 100vh;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+button{
+  box-shadow: 0 0 2px 2px;
+}
+button:active{
+  box-shadow: 0 0 1px 1px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
