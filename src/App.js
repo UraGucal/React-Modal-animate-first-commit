@@ -9,20 +9,22 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"> 
-        <div  className="container bg-light">
-          <div className={`header-intro ${open ? 'show' : ''}`}>
+        <div className="container bg-light">
+          <div className="App-intro">
             <Button onClick={ ()=> setOpen(true) } className="btn-danger mb-3">Каталог товаров</Button>
-            {open &&(
-              <div className="overlay">
-                <div className="Vmodal">
-                  <div className="Vmodal-header">
-                    <h1>{modalTittle}</h1>
-                    <img onClick={ ()=> setOpen(false)} alt="lan" src="https://img.icons8.com/color/48/000000/close-window.png"/>
+            <div className={`header-intro ${open ? 'show' : ''}`}>
+              {open &&(
+                <div className="overlay">
+                  <div className="Vmodal">
+                    <div className="Vmodal-header">
+                      <h1>{modalTittle}</h1>
+                      <img onClick={ ()=> setOpen(false)} alt="lan" src="https://img.icons8.com/color/48/000000/close-window.png"/>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
-          </div> 
+              )}
+            </div> 
+          </div>
         </div>
       </header>
     </div>
