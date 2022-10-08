@@ -5,13 +5,18 @@ import './App.css';
 
 function App() {
  const [open, setOpen] =  React.useState(false);
+ const [outline, setOutline] = React.useState(0);
+ const absolute = 'absolute';
+ const changeOutline = () => {
+  setOutline(outline - 20);
+ }
  const modalTittle = 'Мотозапчасти';
   return (
     <div className="App">
       <header className="App-header"> 
         <div className="container bg-light">
           <div className="App-intro">
-            <Button onMouseEnter={ ()=> setOpen(true) } className="btn-danger mb-3">Каталог товаров</Button>
+            <Button onClick={ ()=> setOpen(true) } className="btn-danger mb-3">Каталог товаров</Button>
             <div className={`header-intro ${open ? 'show' : ''}`}>
               {open &&(
                 <div className="overlay">
@@ -21,7 +26,7 @@ function App() {
                       <img className="modalCloseImage" onClick={ ()=> setOpen(false)} alt="lan" src="https://img.icons8.com/color/48/000000/close-window.png"/>
                     </div>
                     <div className="modal-content">
-                      <img src="https://cdn.powergo.ca/media/catalog/2022/27/0ebc062a16ee408c8dfcefd840de2f77_site/cfmoto-125-st-papio-lemon-green-2022-0.jpg" alt="" className="content-background" />
+                      <img onClick={ changeOutline } style={{position: absolute, top: outline, }} src="https://cdn.powergo.ca/media/catalog/2022/27/0ebc062a16ee408c8dfcefd840de2f77_site/cfmoto-125-st-papio-lemon-green-2022-0.jpg" alt="" className="content-background"/>
                       <p className="content-subtittle">Купить запчасти на скутер, мопед или мотоцикл</p>
                       <span className="modal-content_phone">Тел. (066)-6-228-355</span>
                     </div>
